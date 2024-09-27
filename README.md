@@ -1,4 +1,4 @@
-# Tone Theme for JSON Resume
+# (S)Tone theme for JSON Resume
 
 [![Github pages release status](https://github.com/hgosansn/jsonresume-theme-tone/actions/workflows/github_pages_hosting.yml/badge.svg?event=push)](https://github.com/hgosansn/jsonresume-theme-tone/actions/workflows/github_pages_hosting.yml)
 
@@ -40,7 +40,9 @@ This theme makes no external connections, doesn't embed scripts, and is lightwei
 
 ### Automated preview with puppeteer
 
-This theme includes a script to generate a preview of the résumé in both light and dark mode. This is useful for testing and debugging the theme.
+This theme includes a script to generate a preview of the resume in both light and dark mode. This is useful for testing and debugging the theme.
+
+> `npm run test`
 
 ### Uploaded to GitHub Pages on push
 
