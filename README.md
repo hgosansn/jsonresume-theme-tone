@@ -1,5 +1,7 @@
 # Tone Theme for JSON Resume
 
+[![Github pages release status](https://github.com/hgosansn/jsonresume-theme-tone/actions/workflows/github_pages_hosting.yml/badge.svg?event=push)](https://github.com/hgosansn/jsonresume-theme-tone/actions/workflows/github_pages_hosting.yml)
+
 A self-contained theme for [JSON Resume](http://jsonresume.org/). 
 Designed to work offline and hosted on github pages.
 
