@@ -6,22 +6,9 @@ Designed to work offline and hosted on github pages.
 ## Usage
 
 ```sh
-# Install resume-cli via npm, yarn, pnpm, or whatever package manager you want
-npm install --global resume-cli
-
-# Install @jsonresume/jsonresume-theme-class in the directory resume.json is in
-npm install @jsonresume/jsonresume-theme-class
-
-# Export as an HTML page, ready to be served by any web server
-resume export --theme @jsonresume/jsonresume-theme-class index.html
-
-# Export a PDF document, it's recommended to use your name as the file name
-resume export --theme @jsonresume/jsonresume-theme-class your-name.pdf
+# List existing automation scripts
+jq .scripts ./package.json
 ```
-
-### Notes
-
-* It's recommended to declare the `meta.language` property in your JSON Resume for accessibility. This is the [BCP47 tag](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) for the language your your résumé is written in. For example, `en` for English.
 
 ## Features
 
@@ -49,15 +36,28 @@ Includes a dark mode, and uses the [`prefers-color-scheme`](https://developer.mo
 
 This theme makes no external connections, doesn't embed scripts, and is lightweight by design. Both HTML and PDF exports will be minimal.
 
+### Automated preview with puppeteer
+
+This theme includes a script to generate a preview of the résumé in both light and dark mode. This is useful for testing and debugging the theme.
+
+### Uploaded to GitHub Pages on push
+
+This theme is hosted on GitHub Pages, and is automatically updated when a `release-*` tag is pushed to the repository.
+Check the `release.sh` script for more information.
+
 ## Preview
 
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; justify-content: space-between; gap: 20px;">
     <img 
       src="./assets/preview-dark.png" 
       alt="Preview of Dark Tone theme for JSON Resume in dark mode." 
-      style="width: 48%; border-radius: 10px">
+      style="width: 48%; border-radius: 20px; overflow: hidden;">
     <img 
       src="./assets/preview-light.png" 
       alt="Preview of Light Tone theme for JSON Resume." 
-      style="width: 48%; border-radius: 10px">
+      style="width: 48%; border-radius: 20px; overflow: hidden;">
 </div>
+
+### Notes
+
+* It's recommended to declare the `meta.language` property in your JSON Resume for accessibility. This is the [BCP47 tag](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) for the language your your résumé is written in. For example, `en` for English.
