@@ -38,7 +38,7 @@ jobs:
             - name: Build
               run: |
                   npm install
-                  npm run build
+                  npm run build:html
 
             - name: Setup Pages
               uses: actions/configure-pages@v5
@@ -46,7 +46,7 @@ jobs:
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  # Upload entire repository
+                  # Upload entire dist folder
                   path: "./dist"
 
             - name: Deploy to GitHub Pages

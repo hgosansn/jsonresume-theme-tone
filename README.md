@@ -1,6 +1,7 @@
-# Class Theme for JSON Resume
+# Tone Theme for JSON Resume
 
-A modern theme for [JSON Resume](http://jsonresume.org/) which is self-contained. The content of the résumé will work offline and can be hosted without depending on or making requests to third-party servers.
+A self-contained theme for [JSON Resume](http://jsonresume.org/). 
+Designed to work offline and hosted on github pages.
 
 ## Usage
 
@@ -50,4 +51,4 @@ This theme makes no external connections, doesn't embed scripts, and is lightwei
 
 ## Preview 
 
-![Preview of Class theme for JSON Resume.](./assets/preview.png)
+![Preview of Tone theme for JSON Resume.](./assets/preview.png)
