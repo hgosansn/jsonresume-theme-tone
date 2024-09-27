@@ -21,7 +21,8 @@
     "serve": "resume serve --theme ./src/  --resume ./test/fixture.resume.json",
     "prep": "mkdir -p dist",
     "build:pdf": "npm run prep && resume export --theme ./src/ --resume ./test/fixture.resume.json ./dist/resume.pdf",
-    "build:html": "npm run prep && resume export --theme ./src/ --resume ./test/fixture.resume.json ./dist/resume.html"
+    "build:html": "npm run prep && resume export --theme ./src/ --resume ./test/fixture.resume.json ./dist/resume.html",
+    "test": "node ./test/screenshots.js"
   },
   "dependencies": {
     "handlebars": "^4.7.8",
@@ -29,6 +30,7 @@
     "marked": "^11.1.1"
   },
   "devDependencies": {
+    "puppeteer": "^23.4.1",
     "resume-cli": "^3.0.8"
   }
 }

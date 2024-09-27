@@ -49,6 +49,10 @@ Includes a dark mode, and uses the [`prefers-color-scheme`](https://developer.mo
 
 This theme makes no external connections, doesn't embed scripts, and is lightweight by design. Both HTML and PDF exports will be minimal.
 
-## Preview 
+## Preview Light
 
-![Preview of Tone theme for JSON Resume.](./assets/preview.png)
+![Preview of Light Tone theme for JSON Resume.](./assets/preview-light.png)
+
+## Preview Dark
+
+![Preview of Dark Tone theme for JSON Resume in dark mode.](./assets/preview-dark.png)
