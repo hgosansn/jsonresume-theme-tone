@@ -44,6 +44,8 @@ This theme includes a script to generate a preview of the résumé in both light
 
 This theme is hosted on GitHub Pages, and is automatically updated when a `release-*` tag is pushed to the repository.
 Check the `release.sh` script for more information.
+For future forks, It requires to set the repository `/settings/pages -> source` to GitHub Actions.
+Disable `/settings/environments/` protection rules to allow the GitHub Actions to release from main branch.
 
 ## Preview
 
