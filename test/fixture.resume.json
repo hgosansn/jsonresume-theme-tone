@@ -4,77 +4,156 @@
     "language": "en"
   },
   "basics": {
-    "name": "Seth Falco",
-    "label": "Open-Sourcerer 🧙‍♂️",
-    "email": "seth@example.org",
-    "phone": "+00 0694201337",
-    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sollicitudin nibh sit amet commodo nulla facilisi nullam.",
+    "name": "Super Nova",
+    "label": "Astronaut 🚀",
+    "email": "super.nova@spaceagency.org",
+    "phone": "+00 1234567890",
+    "summary": "A highly experienced astronaut currently on an exploratory mission to Mars, leading cutting-edge research on interplanetary science and human spaceflight. Recipient of numerous prestigious awards for contributions to space exploration.",
     "location": {
-      "countryCode": "GB"
+      "countryCode": "US"
     },
     "profiles": [
       {
-        "network": "GitHub",
-        "username": "SethFalco",
-        "url": "https://github.com/SethFalco"
+        "network": "Twitter",
+        "username": "SuperNovaAstronaut",
+        "url": "https://twitter.com/SuperNovaAstronaut"
       },
       {
         "network": "LinkedIn",
-        "username": "sethfalco",
-        "url": "https://www.linkedin.com/in/sethfalco/"
+        "username": "supernova",
+        "url": "https://www.linkedin.com/in/supernova/"
       }
     ]
   },
   "work": [
     {
-      "name": "JSON Resume",
-      "location": "Remote",
-      "position": "Open-Sourcerer 🧙‍♂️",
-      "url": "https://jsonresume.org/",
-      "startDate": "2021-10",
-      "summary": "Facilisis volutpat est velit egestas dui id ornare.",
+      "name": "Spacewalk Operations",
+      "location": "International Space Station (ISS)",
+      "position": "Lead Spacewalker",
+      "url": "https://www.nasa.gov/mission_pages/station/main/index.html",
+      "startDate": "2023-06",
+      "endDate": "2024-12",
+      "summary": "Oversaw multiple extravehicular activities (EVAs) to repair and upgrade critical ISS systems.",
       "highlights": [
-        "Sollicitudin nibh sit amet commodo nulla facilisi nullam.",
-        "A scelerisque purus semper eget.",
-        "Sed egestas egestas fringilla phasellus faucibus scelerisque.",
-        "Purus semper eget duis at tellus at urna condimentum mattis."
+        "Performed 10 successful spacewalks totaling over 100 hours in microgravity.",
+        "Developed protocols for enhanced safety during complex EVAs.",
+        "Collaborated with engineers to install new solar arrays for ISS power generation."
+      ]
+    },
+    {
+      "name": "Lunar Gateway Construction",
+      "location": "Lunar Orbit",
+      "position": "Construction Supervisor",
+      "url": "https://www.nasa.gov/gateway",
+      "startDate": "2024-01",
+      "endDate": "2024-08",
+      "summary": "Supervised the assembly of the Gateway station in lunar orbit, enabling future deep-space missions.",
+      "highlights": [
+        "Led the construction of the first habitable space station in lunar orbit.",
+        "Trained international teams in assembly techniques under low-gravity conditions.",
+        "Assisted in the first crewed docking with the Lunar Gateway."
+      ]
+    },
+    {
+      "name": "Mars Rover Operations",
+      "location": "Mars Surface",
+      "position": "Rover Pilot",
+      "url": "https://mars.nasa.gov/technology/helicopter/",
+      "startDate": "2025-04",
+      "endDate": "2025-11",
+      "summary": "Piloted and maintained Mars exploration rovers, collecting data on Martian terrain and climate.",
+      "highlights": [
+        "Managed over 1,000 kilometers of rover navigation on the Martian surface.",
+        "Collected critical geological samples for return to Earth analysis.",
+        "Assisted in the discovery of water-ice beneath the Martian surface."
+      ]
+    },
+    {
+      "name": "Deep Space Research",
+      "location": "Mars Orbit",
+      "position": "Principal Investigator",
+      "url": "https://www.isro.gov.in/",
+      "startDate": "2025-09",
+      "endDate": "2026-06",
+      "summary": "Led research into the effects of deep-space radiation on human physiology and spacecraft systems.",
+      "highlights": [
+        "Published findings on radiation shielding effectiveness in peer-reviewed journals.",
+        "Conducted biological experiments on the impact of space radiation on human DNA.",
+        "Developed new safety protocols for long-duration spaceflight."
+      ]
+    },
+    {
+      "name": "Interplanetary Communications Network",
+      "location": "Mission Control, Earth",
+      "position": "Communications Engineer",
+      "url": "https://www.spaceagency.org/missioncontrol",
+      "startDate": "2022-03",
+      "endDate": "2023-05",
+      "summary": "Engineered reliable communication systems between Earth and interplanetary spacecraft.",
+      "highlights": [
+        "Improved communication latency for deep-space missions by 20%.",
+        "Designed and tested new protocols for faster data transmission from Mars.",
+        "Coordinated real-time mission updates from Mars to Earth."
       ]
     }
   ],
   "volunteer": [
     {
-      "organization": "SVGO",
-      "position": "Open-Sourcerer 🧙‍♂️",
-      "url": "https://svgo.dev/",
-      "startDate": "2023-09",
-      "summary": "Cursus risus at ultrices mi tempus imperdiet nulla.",
+      "organization": "Mars Outreach Program",
+      "position": "Space Ambassador",
+      "url": "https://marsoutreach.org/",
+      "startDate": "2026-03",
+      "summary": "Advocated for space exploration and educated the public about the Mars mission through school visits, media interviews, and public lectures.",
       "highlights": [
-        "Sed odio morbi quis commodo odio aenean sed adipiscing.",
-        "Diam sollicitudin tempor id eu nisl nunc mi."
+        "Reached over 500,000 students globally through live streaming from Mars.",
+        "Collaborated with educators to develop space science curriculums for schools.",
+        "Engaged with international audiences to inspire interest in space exploration."
       ]
     }
   ],
   "education": [
     {
-      "institution": "freeCodeCamp",
-      "url": "https://www.freecodecamp.org/",
-      "area": "Information Technology",
-      "studyType": "Community-Study"
+      "institution": "NASA Astronaut Training Program",
+      "url": "https://www.nasa.gov/",
+      "area": "Aerospace Engineering",
+      "studyType": "Certified Astronaut"
+    },
+    {
+      "institution": "Massachusetts Institute of Technology (MIT)",
+      "url": "https://www.mit.edu/",
+      "area": "Aerospace Engineering",
+      "studyType": "Master's Degree",
+      "startDate": "2018-09",
+      "endDate": "2020-06"
     }
   ],
   "certificates": [
     {
-      "name": "edX Verified Certificate for Introduction to Web Accessibility",
-      "date": "2023-04-17",
-      "issuer": "edX"
+      "name": "NASA Certification of Spaceflight",
+      "date": "2024-07-12",
+      "issuer": "NASA"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Medal of Space Exploration",
+      "date": "2027-01-15",
+      "awarder": "International Space Agency",
+      "summary": "Awarded for outstanding leadership during the Mars mission and contribution to interplanetary science."
+    },
+    {
+      "title": "Astronaut Achievement Award",
+      "date": "2026-05-10",
+      "awarder": "NASA",
+      "summary": "Recognized for exemplary performance in spacewalks and Martian habitat construction."
     }
   ],
   "publications": [
     {
-      "name": "What are Bookmarklets? How to Use JavaScript to Make a Bookmarklet in Chromium and Firefox",
-      "publisher": "freeCodeCamp",
-      "releaseDate": "2021-06-17",
-      "url": "https://www.freecodecamp.org/news/what-are-bookmarklets/"
+      "name": "Exploring Mars: A New Frontier in Space Exploration",
+      "publisher": "Journal of Planetary Science",
+      "releaseDate": "2026-11-21",
+      "url": "https://www.journalofplanetaryscience.org/mars-exploration"
     }
   ],
   "languages": [
@@ -83,8 +162,8 @@
       "fluency": "Native"
     },
     {
-      "language": "French",
-      "fluency": "Elementary"
+      "language": "Russian",
+      "fluency": "Advanced"
     }
   ]
 }

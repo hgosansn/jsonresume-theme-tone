@@ -7,3 +7,5 @@ resume.json
 .vscode/
 *.code-workspace
 .history/
+
+dist

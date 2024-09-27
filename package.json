@@ -1,8 +1,8 @@
 {
-  "name": "@jsonresume/jsonresume-theme-class",
-  "version": "0.4.2",
-  "description": "Class Theme for JSON Resume",
-  "author": "Seth Falco",
+  "name": "@hgosansn/jsonresume-theme-tone",
+  "version": "0.0.1",
+  "description": "Tone Theme for JSON Resume",
+  "author": "Hugo SANSON",
   "license": "MIT",
   "private": false,
   "keywords": [
@@ -11,16 +11,17 @@
     "handlebars",
     "jsonresume",
     "jsonresume-theme",
-    "jsonresume-theme-class"
+    "jsonresume-theme-tone"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsonresume/jsonresume-theme-class"
+    "url": "https://github.com/hgosansn/jsonresume-theme-tone"
   },
   "scripts": {
-    "serve": "resume serve --theme .  --resume ./test/fixture.resume.json",
-    "build:pdf": "resume export --theme . --resume ./test/fixture.resume.json resume.pdf",
-    "build:html": "resume export --theme . --resume ./test/fixture.resume.json resume.html"
+    "serve": "resume serve --theme ./src/  --resume ./test/fixture.resume.json",
+    "prep": "mkdir -p dist",
+    "build:pdf": "npm run prep && resume export --theme ./src/ --resume ./test/fixture.resume.json ./dist/resume.pdf",
+    "build:html": "npm run prep && resume export --theme ./src/ --resume ./test/fixture.resume.json ./dist/resume.html"
   },
   "dependencies": {
     "handlebars": "^4.7.8",

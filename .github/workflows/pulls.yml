@@ -13,9 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
-      - run: npm ci
-      - run: npx resume export --theme . --resume ./test/fixture.resume.json /tmp/resume.html
-      - run: npx resume export --theme . --resume ./test/fixture.resume.json /tmp/resume.pdf
+            cache: "npm"
+      - run: npm i
+      - run: npm run build:html
+      - run: npm run build:pdf
