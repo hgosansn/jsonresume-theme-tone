@@ -5,13 +5,6 @@
 A self-contained theme for [JSON Resume](http://jsonresume.org/). 
 Designed to work offline and hosted on github pages.
 
-## Usage
-
-```sh
-# List existing automation scripts
-jq .scripts ./package.json
-```
-
 ## Features
 
 ### JSON Resume 1.0.0
@@ -66,4 +59,4 @@ Disable `/settings/environments/` protection rules to allow the GitHub Actions t
 
 ### Notes
 
-* It's recommended to declare the `meta.language` property in your JSON Resume for accessibility. This is the [BCP47 tag](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) for the language your your résumé is written in. For example, `en` for English.
+* It's recommended to declare the `meta.language` property in your JSON Resume for accessibility. This is the [BCP47 tag](https://developer.mozilla.org/docs/Web/HTML/Global_attributes/lang#language_tag_syntax) for the language your resume is written in. For example, `en` for English.

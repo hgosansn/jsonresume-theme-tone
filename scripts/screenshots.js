@@ -18,6 +18,13 @@ async function takeScreenshot(url, savePath) {
   }
   await page.goto(fileUrl);
 
+  await page.emulateMediaFeatures([
+    { name: 'prefers-color-scheme', value: 'light' },
+  ]);
+
+  const pdf = savePath.replace('.png', '.pdf');
+  await page.pdf({ path: pdf, format: 'a4', printBackground: true });
+  console.log(`PDF saved at ${pdf}`);
 
   // Take a screenshot and save it to the specified path
   await page.setViewport({ width: 1280, height: 800 });

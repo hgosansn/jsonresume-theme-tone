@@ -1,11 +1,11 @@
 node_modules/
 npm-debug.log
-resume.json
-*.pdf
-*.html
 
 .vscode/
 *.code-workspace
 .history/
 
-dist
+.env
+
+dist/*
+temp/*

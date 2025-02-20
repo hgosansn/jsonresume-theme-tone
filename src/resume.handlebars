@@ -37,17 +37,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="twitter:card" content="summary">
     <meta property="og:type" content="website">
-
     <style>{{{css}}}</style>
   </head>
   <body>
 
   {{#resume.basics}}
   <header>
-  <h1>{{name}}</h1>
-  {{#if label}}
-  <h2>{{label}}</h2>
-  {{/if}}
+    <div class="container">
+      <section class="title">
+        <h1>{{name}}</h1>
+        {{#if label}}
+          <h2>{{label}}</h2>
+        {{/if}}
+      </section>
+      {{#if picture}}
+        <div class="picture-frame">
+          <img src="{{picture}}" alt="{{name}}">
+        </div>
+      {{/if}}
+    </div>
   </header>
 
   <div id="content" class="container">
