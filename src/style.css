@@ -85,8 +85,6 @@ header .picture-frame {
   max-width: var(--content-width);
   margin: 0 auto;
   padding: 0 1rem;
-  display: grid;
-  grid-template-columns: var(--sidebar-width) var(--main-width);
   gap: 2rem;
 }
 
@@ -150,7 +148,6 @@ section h3 {
 }
 
 .keywords li {
-  border-left: 1px solid var(--separator-color);
   padding: 0 0.5rem;
   font-size: 0.9rem;
 }
@@ -211,7 +208,7 @@ section h3 {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: var(--content-width)) {
   .container {
     grid-template-columns: 1fr;
   }
