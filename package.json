@@ -26,7 +26,8 @@
     "build": "mkdir -p dist && resumed render ./temp/resume.json --output ./dist/resume.html --theme '../../../src/index.js'",
     "validate": "npx resumed validate ./temp/resume.json",
     "watch": "chokidar \"src/*\" -c \"npm run build && npm run export\" --initial --debounce 1000",
-    "export": "node ./scripts/screenshots.js"
+    "export": "node ./scripts/screenshots.js",
+    "release": "npm run build:test && npm run export && sh commit.sh && sh release.sh"
   },
   "devDependencies": {
     "handlebars": "^4.7.8",
