@@ -6,7 +6,9 @@ body {
   --header-h2-fg-color: black;
   --link-color: black;
   --separator-color: #ddd;
-  --section-spacing: 1.25rem;
+  --section-spacing: 0.5rem;
+  --padding-vertical: 1rem;
+  --padding-horizontal: 1.5rem;
   --content-width: 775px;
   --sidebar-width: 25%;
   --main-width: 75%;
@@ -17,6 +19,9 @@ body {
   font-size: 14px;
   font-family: 'Inter', Roboto, 'Helvetica Neue', sans-serif;
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  padding: var(--section-spacing) 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,8 +43,8 @@ a {
 
 /* Compact Header */
 header {
-  padding: 1.5rem 1rem;
-  margin-bottom: var(--section-spacing);
+  position: relative;
+  padding: var(--padding-vertical) 0;
   border-bottom: 1px solid var(--separator-color);
 }
 
@@ -59,7 +64,7 @@ header .title {
 header h1 {
   color: var(--header-h1-fg-color);
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.5px;
 }
@@ -73,25 +78,39 @@ header h2 {
 
 /* Compact Profile Picture */
 header .picture-frame {
+  position: absolute;
   --picture-size: 100px;
+  right: 0;
+  bottom: calc(-1 * ((var(--picture-size) / 2) + var(--padding-vertical)));
   width: var(--picture-size);
   height: var(--picture-size);
   border-radius: 50%;
+  border: 1px solid var(--separator-color);
+  background: var(--bg-color);
   overflow: hidden;
 }
 
 /* Main Layout */
 .container {
+  position: relative;
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  gap: 2rem;
 }
 
-/* Tight Sections */
-section {
-  margin-bottom: var(--section-spacing);
-  padding: 0.5rem 0;
+.split-left {
+  border-right: 1px solid var(--separator-color);
+  padding-top: var(--padding-vertical);
+  padding-right: var(--padding-horizontal);
+}
+
+.split {
+  padding-top: var(--padding-vertical);
+  padding-left: var(--padding-horizontal);
+}
+
+#basic {
+  border-bottom: 1px solid var(--separator-color);
+  padding: var(--padding-vertical) 0;
 }
 
 section h2 {
@@ -106,36 +125,44 @@ section h3 {
 }
 
 /* Compact Split Layouts */
-.split {
+.unordered {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
-  margin: 0.5rem 0;
+}
+
+/* Contact Section */
+.contact .unordered {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 /* Work Items */
 .item {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--separator-color);
   break-inside: avoid;
 }
 
 .item:last-child {
-  border-bottom: none;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
+#content {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) var(--main-width);
+}
+
 /* Compact Skills Grid */
 #skills .item,
-#languages .item,
 #interests .item {
-  display: grid;
-  grid-template-columns: 1fr auto;
+
   gap: 0.75rem;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+
+#languages .item {
+  display: grid;
+  grid-template-columns: 1fr auto;
 }
 
 .keywords {
@@ -162,11 +189,6 @@ section h3 {
 .highlights li,
 .courses li {
   margin-bottom: 0.25rem;
-}
-
-/* Contact Section */
-.contact .split {
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 }
 
 /* Summary Section */
