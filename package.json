@@ -18,23 +18,23 @@
     "url": "https://github.com/hgosansn/jsonresume-theme-tone"
   },
   "scripts": {
-    "build:test": "mkdir -p dist && resumed render ./test/fixture.resume.json --output ./dist/resume.html --theme '../../../src/index.js'",
+    "build:test": "mkdir -p dist && resumed render ./test/fixture.resume.json --output ./dist/index.html --theme '../../../src/index.js'",
     "validate:test": "npx resumed validate ./test/fixture.resume.json",
     "watch:test": "chokidar \"src/*\" -c \"npm run build && npm run export\" --initial --debounce 1000",
     "fetch": "sh ./scripts/fetch_resume.sh",
     "upload": "sh ./scripts/upload_resume.sh",
-    "build": "mkdir -p dist && resumed render ./temp/resume.json --output ./dist/resume.html --theme '../../../src/index.js'",
+    "build": "mkdir -p dist && resumed render ./temp/resume.json --output ./dist/index.html --theme '../../../src/index.js'",
     "validate": "npx resumed validate ./temp/resume.json",
     "watch": "node ./scripts/watch-and-reload.js",
     "export": "node ./scripts/screenshots.js",
     "release": "npm run build:test && npm run export && sh commit.sh && sh release.sh"
   },
   "devDependencies": {
+    "chokidar": "^4.0.3",
+    "chokidar-cli": "^3.0.0",
     "handlebars": "^4.7.8",
     "html-minifier": "^4.0.0",
     "marked": "^11.2.0",
-    "chokidar-cli": "^3.0.0",
-    "chokidar": "^4.0.3",
     "puppeteer": "^23.11.1",
     "resumed": "^4.1.0",
     "yoctocolors": "^2.1.1"

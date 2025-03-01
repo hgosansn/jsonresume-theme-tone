@@ -2,11 +2,13 @@ const puppeteer = require("puppeteer");
 const chokidar = require("chokidar");
 const { exec } = require("child_process");
 const fs = require("fs");
-const fsevents = require("fsevents"); // Required for chokidar on macOS
+if (process.platform === "darwin") {
+  const fsevents = require("fsevents"); // Required for chokidar on macOS
+}
 const path = require("path");
 const util = require("util");
 
-const HTML_FILE = path.resolve(__dirname, "../dist/resume.html"); // Update as needed
+const HTML_FILE = path.resolve(__dirname, "../dist/index.html"); // Update as needed
 const BUILD_COMMAND = "npm run build && npm run export";
 
 const execPromise = util.promisify(exec);
@@ -42,7 +44,7 @@ const waitForFile = (filePath, timeout = 10000) => {
   await page.emulate({
     viewport: {
       width: 1280, // Default width (adjustable)
-      height: 1024, // Default height (adjustable)
+      height: 2048, // Default height (adjustable)
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,

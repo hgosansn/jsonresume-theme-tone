@@ -43,7 +43,7 @@ async function takeScreenshot(url, savePath) {
 }
 
 // Get the URL and save path from the command line arguments
-const url = './dist/resume.html';
+const url = './dist/index.html';
 const savePath = './assets/preview.png';
 
 if (!url) {
