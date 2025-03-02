@@ -36,6 +36,7 @@
     "html-minifier": "^4.0.0",
     "marked": "^11.2.0",
     "puppeteer": "^23.11.1",
+    "qrcode": "^1.5.4",
     "resumed": "^4.1.0",
     "yoctocolors": "^2.1.1"
   }

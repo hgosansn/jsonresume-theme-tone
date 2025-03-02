@@ -79,7 +79,7 @@ Handlebars.registerHelper("link", (body) => {
  * @param {Object} resume
  * @returns {string}
  */
-function render(resume) {
+async function render(resume) {
   const css = fs.readFileSync(__dirname + "/style.css", "utf-8");
   const template = fs.readFileSync(__dirname + "/resume.handlebars", "utf-8");
   const { profiles } = resume.basics;
@@ -111,7 +111,34 @@ function render(resume) {
     }
   }
 
-  const html = Handlebars.compile(template)({
+  // Generate a QR code for the website URL
+  if (resume.basics.website) {
+    const QRCode = require('qrcode');
+    const { website } = resume.basics;
+    const urlPromise = new Promise((resolve, reject) => {
+      QRCode.toDataURL(website, {
+        margin: 1,
+        color: {
+          dark: '#000000ff',
+          light: '#ffffffff'
+        }
+      },(err, url) => {
+        if (err) {
+          console.error(err);
+          reject(err);
+        } else {
+          resolve(url);
+        }
+      });
+    });
+    const url = await urlPromise;
+    resume.custom = {
+      websiteQRCode: url
+    }
+  }
+
+  const factory = Handlebars.compile(template);
+  const html = factory({
     css,
     resume
   });

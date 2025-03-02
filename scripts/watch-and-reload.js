@@ -43,8 +43,8 @@ const waitForFile = (filePath, timeout = 10000) => {
   // Simulate a normal desktop browser behavior
   await page.emulate({
     viewport: {
-      width: 1280, // Default width (adjustable)
-      height: 2048, // Default height (adjustable)
+      width: 1024, // Default width (adjustable)
+      height: 1248, // Default height (adjustable)
       deviceScaleFactor: 1,
       isMobile: false,
       hasTouch: false,
