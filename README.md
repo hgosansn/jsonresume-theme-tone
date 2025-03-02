@@ -17,6 +17,19 @@ npm run fetch # Fetch the resume from the Gist and save it locally
 npm run watch # To preview the resume using puppeteer
 ```
 
+## List of changes from the original theme
+
+* Added a script to fetch/upload the resume from a Gist.
+* Added a script to live reload preview the resume using puppeteer.
+* Updated from deprecated resume-cli to [resumed](https://github.com/rbardini/resumed) for the resume generation and specs validation.
+* Added a script to generate screenshots of the resume in light and dark mode.
+* Added a script to release the theme to GitHub Pages.
+* Added a script to generate the PDF resume.
+* Completely overhauled the theme to fit in a single pdf page.
+* Added an profile image to the resume.
+* Added a QR code to the resume to link to the online version if available.
+* And other minor quality of life improvements...
+
 ## Features
 
 ### JSON Resume 1.0.0
