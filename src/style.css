@@ -35,7 +35,7 @@ body {
     --header-h1-fg-color: #fff;
     --header-h2-fg-color: #fff;
     --link-color: #fff;
-    --separator-color: #333;
+    --separator-color: #000;
   }
 
   #QRCode {

@@ -15,6 +15,8 @@ To use your own JSON Resume and generate the HTML and PDF files, follow these st
 npm install
 npm run fetch # Fetch the resume from the Gist and save it locally
 npm run watch # To preview the resume using puppeteer
+# In any case list all the available scripts
+jq -r '.scripts' ./package.json
 ```
 
 ## List of changes from the original theme
