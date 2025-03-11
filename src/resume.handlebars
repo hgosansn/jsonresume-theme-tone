@@ -260,52 +260,51 @@
           <h2>Work Experience</h2>
           {{#each resume.work}}
           <div class="item">
-          {{#if name}}
-          <h3 class="work_name">
-            {{name}}
-          </h3>
-          {{else if company}}
-          <h3 class="work_name">
-            {{company}}
-          </h3>
-          {{/if}}
-                      {{!-- {{#if url}}
-            <div class="work_website">
-              {{{link url}}}
-            </div>
+            <div class="unordered">
+              {{#if position}}
+                <h3 class="work_position">
+                  {{position}}
+                </h3>
+              {{else if name}}
+                <h3 class="work_name">
+                  {{name}}
+                </h3>
+              {{/if}}
 
-            {{else if website}}
-            <div class="work_website">
-              <a href="{{website}}">{{website}}</a>
+              <div class="work_date">
+                {{#if startDate}}
+                {{{date startDate}}} - {{{date endDate}}}
+                {{/if}}
+              </div>
             </div>
-            {{/if}} --}}
-
-          <div class="unordered">
-            {{#if position}}
-            <div class="work_position">
-              {{position}}
+            {{#if company}}
+            <div class="work_name">
+              {{company}}
             </div>
             {{/if}}
+                        {{!-- {{#if url}}
+              <div class="work_website">
+                {{{link url}}}
+              </div>
 
-            <div class="work_date">
-              {{#if startDate}}
-              {{{date startDate}}} - {{{date endDate}}}
-              {{/if}}
+              {{else if website}}
+              <div class="work_website">
+                <a href="{{website}}">{{website}}</a>
+              </div>
+              {{/if}} --}}
+
+            {{#if summary}}
+            <div class="summary">
+              <p>{{{markdown summary}}}</p>
             </div>
-          </div>
-
-          {{#if summary}}
-          <div class="summary">
-            <p>{{{markdown summary}}}</p>
-          </div>
-          {{/if}}
-          {{#if highlights.length}}
-          <ul class="highlights">
-            {{#each highlights}}
-            <li>{{{markdown .}}}</li>
-            {{/each}}
-          </ul>
-          {{/if}}
+            {{/if}}
+            {{#if highlights.length}}
+            <ul class="highlights">
+              {{#each highlights}}
+              <li>{{{markdown .}}}</li>
+              {{/each}}
+            </ul>
+            {{/if}}
           </div>
           {{/each}}
         </section>

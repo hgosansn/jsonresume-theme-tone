@@ -35,7 +35,7 @@ body {
     --header-h1-fg-color: #fff;
     --header-h2-fg-color: #fff;
     --link-color: #fff;
-    --separator-color: #000;
+    --separator-color: #2c2c2c;
   }
 
   #QRCode {
@@ -160,7 +160,6 @@ section {
   padding-left: var(--tab-left);
 }
 
-.timeline .item > div,
 .timeline .item > ul,
 .summary p,
 .list-container div.item,
@@ -194,8 +193,16 @@ section h3 {
   gap: 1rem;
 }
 
-#profiles .item{
+#profiles .item {
   text-align: center;
+}
+
+#profiles .item:first-child {
+  text-align: left;
+}
+
+#profiles .item:last-child {
+  text-align: right;
 }
 
 /* Contact Section */
@@ -217,7 +224,7 @@ section h3 {
 
 #skills .item .name,
 #interests .item .name {
-  font-weight: 500;
+  font-weight: 800;
 }
 
 #languages .item {
@@ -256,7 +263,7 @@ ul.highlights li {
 
 ul.highlights li:before {
   content: "•";
-  margin-right: 0.5rem;
+  margin-right: 0.6rem;
 }
 
 /* Summary Section */
