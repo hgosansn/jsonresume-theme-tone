@@ -52,7 +52,13 @@ const waitForFile = (filePath, timeout = 10000) => {
     userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
   });
 
+
+  await page.emulateMediaFeatures([
+      { name: 'prefers-color-scheme', value: 'light' },
+  ]);
+
   await page.goto(`file://${HTML_FILE}`);
+
 
   const watchDir = path.resolve(__dirname, "../src");
   console.log("🚀 Watching for changes in " + watchDir);
