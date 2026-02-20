@@ -61,10 +61,11 @@ const waitForFile = (filePath, timeout = 10000) => {
 
 
   const watchDir = path.resolve(__dirname, "../src");
-  console.log("🚀 Watching for changes in " + watchDir);
+  const resumeFile = path.resolve(__dirname, "../temp/resume.json");
+  console.log("🚀 Watching for changes in " + watchDir + " and " + resumeFile);
   // Watch for changes and rebuild
 
-  const watcher = chokidar.watch(watchDir);
+  const watcher = chokidar.watch([watchDir, resumeFile]);
   watcher.on("change", async () => {
     console.log("🔄 Changes detected, rebuilding...");
 

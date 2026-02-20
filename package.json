@@ -27,6 +27,8 @@
     "validate": "npx resumed validate ./temp/resume.json",
     "watch": "node ./scripts/watch-and-reload.js",
     "export": "node ./scripts/screenshots.js",
+    "pdf": "node ./scripts/generate_pdf.js",
+    "update-pdf": "npm run build && npm run pdf",
     "release": "npm run build:test && npm run export && sh commit.sh && sh release.sh"
   },
   "devDependencies": {

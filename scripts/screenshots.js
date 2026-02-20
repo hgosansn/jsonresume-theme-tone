@@ -23,7 +23,14 @@ async function takeScreenshot(url, savePath) {
   ]);
 
   const pdf = savePath.replace('.png', '.pdf');
-  await page.pdf({ path: pdf, format: 'a4', printBackground: true });
+  await page.pdf({
+    path: pdf,
+    format: 'a4',
+    printBackground: true,
+    margin: { top: '0.6cm', right: '0.8cm', bottom: '0.6cm', left: '0.8cm' },
+    preferCSSPageSize: false,
+    scale: 1,
+  });
   console.log(`PDF saved at ${pdf}`);
 
   // Take a screenshot and save it to the specified path

@@ -1,46 +1,60 @@
+/* ==========================================================================
+   TONE — Senior Product Engineer Resume Theme
+   Modern, minimal, high-contrast single-column layout
+   ========================================================================== */
+
 /* Base Variables */
 body {
-  --fg-color: black;
+  --fg-color: #1a1a1a;
+  --fg-secondary: #555;
+  --fg-tertiary: #6b6b6b;
   --bg-color: #fff;
-  --header-h1-fg-color: black;
-  --header-h2-fg-color: black;
-  --link-color: black;
-  --separator-color: #ddd;
-  --padding-vertical: 0.75rem;
-  --padding-horizontal: 1rem;
+  --accent-color: #111;
+  --accent-color-subtle: #f5f5f5;
+  --link-color: #1a5fb4;
+  --separator-color: #e0e0e0;
+  --separator-light: #f0f0f0;
   --content-width: 774px;
-  --gap: 0.5rem;
-  --tab-left: 0.5rem;
-  --sidebar-width: 150px;
-  --main-width: 75%;
-  --picture-size: 100px;
+  --section-gap: 1.25rem;
+  --item-gap: 1rem;
+  --sidebar-width: 170px;
+  --picture-size: 120px;
 
-  margin: 2px;
+  margin: 0;
+  padding: 0;
   color: var(--fg-color);
   background: var(--bg-color);
-  font-size: 14px;
-  font-family: "Inter", Roboto, "Helvetica Neue", sans-serif;
-  line-height: 1.4;
+  font-size: 13.5px;
+  font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.55;
   display: flex;
-  padding: 1px;
   flex-direction: column;
-  justify-content: stretch;
+  align-items: center;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    --fg-color: #fff;
-    --bg-color: #000;
-    --header-h1-fg-color: #fff;
-    --header-h2-fg-color: #fff;
-    --link-color: #fff;
-    --separator-color: #2c2c2c;
+    --fg-color: #e8e8e8;
+    --fg-secondary: #aaa;
+    --fg-tertiary: #8a8a8a;
+    --bg-color: #0d0d0d;
+    --accent-color: #fff;
+    --accent-color-subtle: #1a1a1a;
+    --link-color: #6aaef5;
+    --separator-color: #2a2a2a;
+    --separator-light: #1a1a1a;
   }
 
   #QRCode {
     filter: invert(1);
   }
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 /* Links */
@@ -49,48 +63,121 @@ a {
   text-decoration: none;
 }
 
-/* Compact Header */
-header {
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Layout Container
+   ========================================================================== */
+
+.container {
   position: relative;
+  width: 100%;
+  max-width: var(--content-width);
+  min-width: var(--content-width);
+  margin: 0 auto;
+  border-left: 1px solid var(--separator-color);
+  border-right: 1px solid var(--separator-color);
+  border-bottom: 1px solid var(--separator-color);
+  overflow: visible;
 }
 
-header h1 {
+/* ==========================================================================
+   Header Block — Name + Contact + About (in main column)
+   ========================================================================== */
+
+.header-block {
+  padding: 0 1rem 0.75rem;
+  border-bottom: 1px solid var(--separator-light);
+  background: var(--accent-color-subtle);
+}
+
+.header-block .title {
+  margin-bottom: 0.3rem;
+}
+
+.header-block h1 {
   margin: 0;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: -0.75px;
+  color: var(--accent-color);
+  line-height: 1.15;
 }
 
-header h3 {
+.header-block h3 {
+  margin: 0.2rem 0 0;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--fg-secondary);
+  letter-spacing: 0.2px;
+}
+
+/* Contact */
+.contact .item.unordered {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
   padding: 0;
   margin: 0;
 }
 
-.title {
-  border-top: 1px solid var(--separator-color);
+.contact .item.unordered > div {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
 }
 
-/* Compact Profile Picture */
-header .picture-frame {
-  position: absolute;
-  right: calc(var(--sidebar-width) / 2 + var(--padding-horizontal) - var(--picture-size) / 2);
-  bottom: calc(-1 * (var(--picture-size) / 2));
+.contact .item.unordered strong {
+  display: none;
+}
+
+.contact .item.unordered a {
+  color: var(--fg-secondary);
+}
+
+.contact .item.unordered a:hover {
+  color: var(--link-color);
+}
+
+/* About */
+.about-section {
+  margin-top: 0.6rem;
+}
+
+.about-section p.item {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--fg-color);
+}
+
+/* Picture — in sidebar */
+.picture-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 0.5rem;
+}
+
+.picture-frame img {
   width: var(--picture-size);
   height: var(--picture-size);
   border-radius: 50%;
-  border: 1px solid var(--separator-color);
-  background: var(--bg-color);
-  overflow: hidden;
+  object-fit: cover;
+  display: block;
+  border: 2px solid var(--separator-color);
 }
 
-/* Main Layout */
-.container {
-  position: relative;
-  min-width: var(--content-width);
-  max-width: var(--content-width);
-  border-left: 1px solid var(--separator-color);
-  border-right: 1px solid var(--separator-color);
-  border-bottom: 1px solid var(--separator-color);
-  margin: 0 auto;
+/* ==========================================================================
+   Main Content — Single Column
+   ========================================================================== */
+
+#main-content {
+  padding: 0;
 }
 
 #content {
@@ -99,30 +186,9 @@ header .picture-frame {
   justify-content: stretch;
   align-items: stretch;
   overflow: hidden;
-  /* Reverse natural elements order */
 }
 
-#history {
-  position: relative;
-  overflow: hidden;
-}
-
-#history::before {
-  content: "";
-  z-index: 1;
-  position: absolute;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    var(--bg-color) 100%
-  );
-}
-
-/* left sidebar */
+/* Right sidebar */
 .split-side {
   display: flex;
   flex-direction: column;
@@ -130,213 +196,516 @@ header .picture-frame {
   justify-content: stretch;
   position: relative;
   flex: 0 0 var(--sidebar-width);
-  gap: var(--gap);
+  gap: 0.5rem;
   border-left: 1px solid var(--separator-color);
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  background: var(--accent-color-subtle);
 }
 
+/* Main column */
 .split {
   overflow: hidden;
   flex: 1 1 auto;
-  padding: var(--padding-vertical) var(--padding-horizontal);
+  padding: 0 0 0.75rem;
 }
 
-#basic, .title {
-  padding: var(--padding-vertical) var(--padding-horizontal);
-}
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
 
 section {
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
-
-}
-
-.work_date {
-  text-align: right;
-}
-
-.split section .item {
-  padding-left: var(--tab-left);
-}
-
-.timeline .item {
-  position: relative;
-  padding-bottom: 0.5rem;
-}
-.timeline .item::after {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 100%;
-  height: 1px;
-  background-color: var(--separator-color);
-  height: 2px;
-  opacity: 0.3;
-}
-
-.timeline .item > ul,
-.summary p,
-.list-container div.item,
-.languages {
-  padding-left: var(--tab-left);
-}
-
-section .item ul.highlights {
-  margin-left: var(--tab-left);
+  gap: 0;
 }
 
 section h2 {
-  font-size: 1rem;
-  margin: 0;
-  font-weight: 600;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--fg-tertiary);
+  padding: 0.5rem 1rem 0;
 }
 
 section h3 {
   font-size: 1rem;
   margin: 0;
+  font-weight: 600;
+  color: var(--fg-color);
 }
 
-.item.unordered {
-  padding: 0;
+/* ==========================================================================
+   Work Experience — Timeline
+   ========================================================================== */
+
+#work {
+  gap: 0;
 }
 
-/* Compact Split Layouts */
-.unordered {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+#work .item {
+  padding: 0 1rem var(--item-gap);
+  margin-bottom: var(--item-gap);
+  border-bottom: 1px solid var(--separator-light);
+  position: relative;
+}
+
+#work .item::after {
+  display: none;
+}
+
+#work .item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#work .item .unordered {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   gap: 1rem;
 }
 
-#profiles .item {
-  text-align: center;
+#work .item h3.work_position {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--fg-color);
+  margin: 0;
 }
 
-#profiles .item:first-child {
-  text-align: left;
-}
-
-#profiles .item:last-child {
+#work .item .work_date {
+  font-size: 0.8rem;
+  color: var(--fg-tertiary);
+  white-space: nowrap;
   text-align: right;
+  font-weight: 400;
+  flex-shrink: 0;
 }
 
-/* Contact Section */
-.contact .unordered {
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+#work .item .work_name {
+  font-size: 0.9rem;
+  color: var(--fg-secondary);
+  font-weight: 500;
+  margin-top: 0.1rem;
 }
 
-/* Work Items */
-.item {
-  break-inside: avoid;
+#work .item .summary {
+  margin-top: 0.3rem;
 }
 
-/* Compact Skills Grid */
-#skills .item,
-#interests .item {
+#work .item .summary p {
+  margin: 0;
+  font-size: 0.825rem;
+  line-height: 1.5;
+  color: var(--fg-color);
+}
+
+#work .item ul.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0;
+}
+
+#work .item ul.highlights li {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--fg-secondary);
+  background: var(--accent-color-subtle);
+  border: 1px solid var(--separator-color);
+  padding: 0.1rem 0.45rem;
+  border-radius: 3px;
+  line-height: 1.3;
+}
+
+#work .item ul.highlights li::before {
+  display: none;
+}
+
+/* ==========================================================================
+   Skills — Grouped Competency Blocks
+   ========================================================================== */
+
+#skills {
   gap: 0.75rem;
-  align-items: center;
 }
 
-#skills .item .name,
-#interests .item .name {
-  font-weight: 800;
+#skills .item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.2rem;
+  padding: 0 1rem;
 }
 
-#languages .item {
-  display: grid;
-  grid-template-columns: 1fr auto;
+#skills .item .name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--fg-color);
+  min-width: 160px;
+  flex-shrink: 0;
 }
 
-ul.keywords {
+#skills .item .level {
+  display: none;
+}
+
+#skills ul.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 0.2rem;
-  padding-left: var(--tab-left);
 }
 
-/* Highlights and Lists */
-.highlights,
-.courses {
-  margin: 0;
+#skills ul.keywords li {
+  font-size: 0.8rem;
+  color: var(--fg-secondary);
+  font-weight: 400;
+}
+
+#skills ul.keywords li:not(:last-child)::after {
+  content: " \00b7  ";
+  color: var(--fg-tertiary);
+  margin-left: 0.3rem;
+}
+
+/* ==========================================================================
+   Education
+   ========================================================================== */
+
+#education {
+  gap: 0.5rem;
+}
+
+#education .item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.1rem;
+  padding: 0 1rem;
+}
+
+#education .item .institution {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--fg-color);
+}
+
+#education .item .study_date {
+  font-size: 0.8rem;
+  color: var(--fg-tertiary);
+  font-weight: 400;
+}
+
+#education .item .qualification {
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+}
+
+#education .item .dissertation {
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
+}
+
+#education .item .area {
+  font-size: 0.8rem;
+  color: var(--fg-secondary);
+}
+
+#education ul.courses {
+  margin: 0.3rem 0;
   padding-left: 1rem;
+  font-size: 0.85rem;
+  color: var(--fg-secondary);
 }
 
-ul.highlights {
+/* ==========================================================================
+   Languages — Inline
+   ========================================================================== */
+
+#languages {
+  gap: 0.5rem;
+}
+
+#languages .languages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  padding: 0 1rem;
+}
+
+#languages .item.language {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+#languages .item.language div:first-child {
+  font-weight: 600;
+  color: var(--fg-color);
+}
+
+#languages .item.language .level {
+  color: var(--fg-tertiary);
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Interests — Compressed
+   ========================================================================== */
+
+#interests {
+  gap: 0.5rem;
+}
+
+#interests .item {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+#interests .item .name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg-color);
+}
+
+#interests ul.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.2rem;
-}
-ul.highlights li {
-  line-height: 1rem;
 }
 
-ul.highlights li:before {
-  content: "•";
-  margin-right: 0.6rem;
+#interests ul.keywords li {
+  font-size: 0.8rem;
+  color: var(--fg-tertiary);
+  font-weight: 400;
 }
 
-/* Summary Section */
-.summary p {
-  margin: 0.2rem 0;
+#interests ul.keywords li:not(:last-child)::after {
+  content: " \00b7  ";
+  margin-left: 0.2rem;
 }
+
+/* ==========================================================================
+   Volunteer
+   ========================================================================== */
+
+#volunteer .item {
+  padding: 0 1rem var(--item-gap);
+  margin-bottom: var(--item-gap);
+  border-bottom: 1px solid var(--separator-light);
+}
+
+#volunteer .item:last-child {
+  border-bottom: none;
+}
+
+#volunteer .item .unordered {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+/* ==========================================================================
+   References
+   ========================================================================== */
+
+#references .item {
+  padding: 0 1rem;
+}
+
+#references .item blockquote {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--separator-color);
+  font-style: italic;
+  color: var(--fg-secondary);
+  font-size: 0.9rem;
+}
+
+#references .item .name {
+  font-size: 0.85rem;
+  color: var(--fg-tertiary);
+  margin-top: 0.3rem;
+}
+
+/* ==========================================================================
+   QR Code
+   ========================================================================== */
+
+#QRCode {
+  max-width: 40px;
+  max-height: 40px;
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+}
+
+#QRCode img {
+  display: block;
+  margin: auto;
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
 
 .emptySpace {
   flex: 1 1 auto;
 }
 
-#QRCode {
-  max-width: var(--picture-size);
-  max-height: var(--picture-size);
-  display: flex;
-  position: relative;
-  min-width: 100%;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+.timeline .item::after {
+  display: none;
 }
+
+/* padding-left handled per-section now */
+
+.timeline .item > ul,
+.list-container div.item {
+  padding-left: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 
 footer {
-  min-height: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: stretch;
-  border-top: 1px solid var(--separator-color);
+  min-height: 2rem;
 }
 
-footer .container section#footer {
-  flex: 1;
-  padding: var(--padding-horizontal) 0;
-}
+/* ==========================================================================
+   Print
+   ========================================================================== */
 
-/* Print Optimization */
 @page {
-  margin: 1.4cm;
+  margin: 0.6cm 0.8cm;
   size: A4;
-  body {
-    max-height: 800px;
-  }
-  #history {
-    max-height: 810px;
-    overflow: hidden;
-  }
 }
 
 @media print {
   body {
+    --fg-color: #1a1a1a;
+    --fg-secondary: #444;
+    --fg-tertiary: #666;
     --bg-color: white;
-    --fg-color: black;
-    --header-h1-fg-color: black;
-    --header-h2-fg-color: black;
-    --link-color: black;
+    --accent-color: #000;
+    --accent-color-subtle: #f7f7f7;
+    --link-color: #1a1a1a;
     --separator-color: #ddd;
+    --separator-light: #eee;
+    --content-width: 100%;
+    --section-gap: 1rem;
+    --item-gap: 0.6rem;
+    --sidebar-width: 150px;
+    --picture-size: 40px;
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .container {
+    padding: 0;
+    min-width: unset;
+    max-width: 100%;
+    width: 100%;
+    border: none;
+  }
+
+  #content {
+    overflow: visible;
+  }
+
+  .picture-frame {
+    --picture-size: 120px;
+    padding: 0.75rem 0.75rem 0.5rem;
+  }
+
+  .header-block {
+    padding: 0.4rem 0.75rem;
+  }
+
+  section h2 {
+    padding-top: 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  #work .item {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  #work .item .summary p {
+    font-size: 0.75rem;
+    line-height: 1.35;
+  }
+
+  #work .item h3.work_position {
+    font-size: 0.85rem;
+  }
+
+  #work .item .work_name {
+    font-size: 0.8rem;
+  }
+
+  #work .item ul.highlights li {
+    font-size: 0.6rem;
+    padding: 0.05rem 0.3rem;
+  }
+
+  #skills .item .name {
+    font-size: 0.75rem;
+  }
+
+  #skills ul.keywords li {
+    font-size: 0.7rem;
+  }
+
+  #education .item .institution {
+    font-size: 0.8rem;
+  }
+
+  #education .item .study_date,
+  #education .item .area {
+    font-size: 0.7rem;
+  }
+
+  #languages .item.language {
+    font-size: 0.75rem;
+  }
+
+  #interests .item .name {
+    font-size: 0.75rem;
+  }
+
+  #interests ul.keywords li {
+    font-size: 0.7rem;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  /* Prevent ALL page breaks — single page */
+  * {
+    break-inside: avoid-page;
+    break-before: avoid-page;
+    break-after: avoid-page;
+  }
+
+  #QRCode {
+    opacity: 0.4;
   }
 }
