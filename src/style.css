@@ -100,6 +100,7 @@ a:hover {
 .header-block h1 {
   margin: 0;
   font-size: 0.8rem;
+  padding-top: var(--item-gap);
   font-weight: 800;
   letter-spacing: -0.75px;
   color: var(--accent-color);
@@ -300,7 +301,8 @@ section h3 {
   color: var(--fg-color);
 }
 
-#work .item ul.highlights {
+/* Highlights — apply to any timeline section (work, volunteer, etc.) */
+.timeline .item ul.highlights {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
@@ -309,7 +311,7 @@ section h3 {
   padding: 0;
 }
 
-#work .item ul.highlights li {
+.timeline .item ul.highlights li {
   font-size: 0.7rem;
   font-weight: 500;
   color: var(--fg-secondary);
@@ -320,7 +322,7 @@ section h3 {
   line-height: 1.3;
 }
 
-#work .item ul.highlights li::before {
+.timeline .item ul.highlights li::before {
   display: none;
 }
 
@@ -660,7 +662,7 @@ footer {
     font-size: 0.8rem;
   }
 
-  #work .item ul.highlights li {
+  .timeline .item ul.highlights li {
     font-size: 0.6rem;
     padding: 0.05rem 0.3rem;
   }

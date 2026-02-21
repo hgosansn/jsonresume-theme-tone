@@ -20,7 +20,7 @@
   "scripts": {
     "build:test": "mkdir -p dist && resumed render ./test/fixture.resume.json --output ./dist/index.html --theme '../../../src/index.js'",
     "validate:test": "npx resumed validate ./test/fixture.resume.json",
-    "watch:test": "chokidar \"src/*\" -c \"npm run build && npm run export\" --initial --debounce 1000",
+    "watch:test": "chokidar \"src/*\" -c \"npm run build:test && npm run export\" --initial --debounce 1000",
     "fetch": "sh ./scripts/fetch_resume.sh",
     "upload": "sh ./scripts/upload_resume.sh",
     "build": "mkdir -p dist && resumed render ./temp/resume.json --output ./dist/index.html --theme '../../../src/index.js'",
